@@ -1,3 +1,2 @@
 login_host: 172.31.85.251
 mysql_root_password: ExpenseApp@1
-component: db
