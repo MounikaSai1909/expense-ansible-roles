@@ -1,0 +1,8 @@
+- name: install packages
+  become: yes
+  hosts: all
+  tasks:
+  - name: postfix
+    ansible.builtin.dnf:
+      name: postfix
+      state: latest
