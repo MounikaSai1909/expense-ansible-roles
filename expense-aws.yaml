@@ -1,0 +1,19 @@
+- name: create ec2 and r53 records
+  hosts: localhost 
+  vars:
+    zone: mounka.online
+  tasks:
+  - name: create ec2 instances
+    amazon.aws.ec2-instance:
+      instance_type: t2.micro
+      name: "{{ item }}"
+      security_group : allow-everything
+      image_id: ami-041e2ea9402c46c32
+      tags:
+        Name: "{{ item }}"
+    loops :
+    - db
+    - backend
+    - frontend
+    register: ec2_instances_info
+
