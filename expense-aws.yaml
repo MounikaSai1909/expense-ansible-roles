@@ -11,7 +11,7 @@
       image_id: ami-041e2ea9402c46c32
       tags:
         Name: "{{ item }}"
-    loops :
+    loop:
     - db
     - backend
     - frontend
